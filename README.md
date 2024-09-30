@@ -23,4 +23,3 @@ There are two cardinality encodings available:
 
 The cardinality encodings are based on the following document by Carsten Sinz:
 Sinz, C. (2005). Towards an Optimal CNF Encoding of Boolean Cardinality Constraints. In: van Beek, P. (eds) Principles and Practice of Constraint Programming - CP 2005. CP 2005. Lecture Notes in Computer Science, vol 3709. Springer, Berlin, Heidelberg. https://doi.org/10.1007/11564751_73
-https://www.carstensinz.de/papers/CP-2005.pdf

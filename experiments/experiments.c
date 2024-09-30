@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     exectime[0] = (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1000000.0;
 
 
-    //maxsat config 1: algo: UNSAT->SAT encode: serial counter
+    //maxsat config 2: algo: UNSAT->SAT encode: serial counter
     gettimeofday(&start, NULL);
     result = maxsat_solve(argv[1], UNSAT_SAT_CNT);
     gettimeofday(&end, NULL);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
     exectime[1] = (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1000000.0;
 
-    //maxsat config 1: algo: SAT->UNSAT encode: naive
+    //maxsat config 3: algo: SAT->UNSAT encode: naive
     gettimeofday(&start, NULL);
     result = maxsat_solve(argv[1], SAT_UNSAT_NAIVE);
     gettimeofday(&end, NULL);
@@ -54,11 +54,11 @@ int main(int argc, char *argv[])
         printf("wrong solution %d excpected %d\n",result.solution,optimal_sol);
         return 1;
     }
-  
+
 
     exectime[2] = (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1000000.0;
 
-    //maxsat config 1: algo: SAT->UNSAT encode: serail counter
+    //maxsat config 4: algo: SAT->UNSAT encode: serail counter
     gettimeofday(&start, NULL);
     result = maxsat_solve(argv[1], SAT_UNSAT_CNT);
     gettimeofday(&end, NULL);

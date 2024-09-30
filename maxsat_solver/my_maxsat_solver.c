@@ -440,7 +440,7 @@ maxsat_ret_t maxsat_solve(char *filepath, config_t config){
         break;
 
     case UNSAT_SAT_CNT:
-        model = linear_unsat_to_sat(filepath, encode_at_most_k_unsat_serial_cnt, &solution, &num_variables, &num_clauses);
+        model = linear_sat_to_unsat(filepath, encode_at_most_k_unsat_serial_cnt, &solution, &num_variables, &num_clauses);
         ret.model = model;
         ret.solution = solution;
         ret.num_clauses = num_clauses;
