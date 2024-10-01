@@ -412,7 +412,7 @@ maxsat_ret_t maxsat_solve(char *filepath, config_t config){
 
     switch (config)
     {
-    case SAT_UNSAT_NAIVE:
+    case UNSAT_SAT_NAIVE:
         model = linear_unsat_to_sat(filepath, enocde_at_most_k_unsat_naive, &solution, &num_variables, &num_clauses);
         ret.model = model;
         ret.solution = solution;
@@ -421,7 +421,7 @@ maxsat_ret_t maxsat_solve(char *filepath, config_t config){
         return ret;
         break;
 
-    case SAT_UNSAT_CNT:
+    case UNSAT_SAT_CNT:
         model = linear_unsat_to_sat(filepath, encode_at_most_k_unsat_serial_cnt, &solution, &num_variables, &num_clauses);
         ret.model = model;
         ret.solution = solution;
@@ -430,7 +430,7 @@ maxsat_ret_t maxsat_solve(char *filepath, config_t config){
         return ret;
         break;
 
-    case UNSAT_SAT_NAIVE:
+    case SAT_UNSAT_NAIVE:
         model = linear_sat_to_unsat(filepath, enocde_at_most_k_unsat_naive, &solution, &num_variables, &num_clauses);
         ret.model = model;
         ret.solution = solution;
@@ -439,7 +439,7 @@ maxsat_ret_t maxsat_solve(char *filepath, config_t config){
         return ret;
         break;
 
-    case UNSAT_SAT_CNT:
+    case SAT_UNSAT_CNT:
         model = linear_sat_to_unsat(filepath, encode_at_most_k_unsat_serial_cnt, &solution, &num_variables, &num_clauses);
         ret.model = model;
         ret.solution = solution;
