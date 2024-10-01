@@ -1,3 +1,4 @@
 .*o
 .*a
 minisat-*
+!minisat-220.tar.gz
